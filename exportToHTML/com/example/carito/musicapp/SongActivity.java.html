@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>SongActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #666879; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(255,121,198); font-weight: bold; }
+.s1 { color: rgb(248,248,242); }
+.s2 { color: rgb(255,121,198); }
+.s3 { color: rgb(248,248,242); }
+.s4 { color: rgb(98,114,164); }
+.s5 { color: rgb(241,250,140); }
+</style>
+</head>
+<BODY BGCOLOR="#282a36">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+SongActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">carito</span><span class="s2">.</span><span class="s1">musicapp</span><span class="s3">;</span><span class="s1"> 
+<a name="l2"><span class="ln">2    </span></a> 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s3">;</span><span class="s1"> 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">support</span><span class="s2">.</span><span class="s1">v7</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s3">;</span><span class="s1"> 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s3">;</span><span class="s1"> 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s3">;</span><span class="s1"> 
+<a name="l7"><span class="ln">7    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">ImageView</span><span class="s3">;</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s3">;</span><span class="s1"> 
+<a name="l9"><span class="ln">9    </span></a> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">ArrayList</span><span class="s3">;</span><span class="s1"> 
+<a name="l11"><span class="ln">11   </span></a> 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s0">public class </span><span class="s1">SongActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+<a name="l13"><span class="ln">13   </span></a> 
+<a name="l14"><span class="ln">14   </span></a>    @Override 
+<a name="l15"><span class="ln">15   </span></a>    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+<a name="l16"><span class="ln">16   </span></a>        </span><span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate(savedInstanceState)</span><span class="s3">;</span><span class="s1"> 
+<a name="l17"><span class="ln">17   </span></a>        setContentView(R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_song)</span><span class="s3">;</span><span class="s1"> 
+<a name="l18"><span class="ln">18   </span></a>        TextView songName </span><span class="s2">= </span><span class="s1">(TextView)findViewById(R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">song_name_text_view)</span><span class="s3">;</span><span class="s1"> 
+<a name="l19"><span class="ln">19   </span></a>        TextView artistName </span><span class="s2">= </span><span class="s1">(TextView)findViewById(R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">artist_name_text_view)</span><span class="s3">;</span><span class="s1"> 
+<a name="l20"><span class="ln">20   </span></a> 
+<a name="l21"><span class="ln">21   </span></a>        </span><span class="s4">// Paquete // El song Adapter hace unos extras, se lo pasa al intent y el intent los encapsula</span><span class="s1"> 
+<a name="l22"><span class="ln">22   </span></a>        </span><span class="s4">// en un paquete.</span><span class="s1"> 
+<a name="l23"><span class="ln">23   </span></a>        Bundle extras </span><span class="s2">= </span><span class="s0">this</span><span class="s2">.</span><span class="s1">getIntent()</span><span class="s2">.</span><span class="s1">getExtras()</span><span class="s3">;</span><span class="s1"> 
+<a name="l24"><span class="ln">24   </span></a>        </span><span class="s0">if </span><span class="s1">(extras </span><span class="s2">!= </span><span class="s0">null</span><span class="s1">) { 
+<a name="l25"><span class="ln">25   </span></a>            </span><span class="s4">// Al extra le pedimos el string con el nombre de la canción.</span><span class="s1"> 
+<a name="l26"><span class="ln">26   </span></a>            String getSongName </span><span class="s2">= </span><span class="s1">extras</span><span class="s2">.</span><span class="s1">getString(</span><span class="s5">&quot;Song Name&quot;</span><span class="s1">)</span><span class="s3">;</span><span class="s1"> 
+<a name="l27"><span class="ln">27   </span></a>            String getArtistName </span><span class="s2">= </span><span class="s1">extras</span><span class="s2">.</span><span class="s1">getString(</span><span class="s5">&quot;Artist Name&quot;</span><span class="s1">)</span><span class="s3">;</span><span class="s1"> 
+<a name="l28"><span class="ln">28   </span></a>            songName</span><span class="s2">.</span><span class="s1">setText(getSongName)</span><span class="s3">;</span><span class="s1"> 
+<a name="l29"><span class="ln">29   </span></a>            artistName</span><span class="s2">.</span><span class="s1">setText(getArtistName)</span><span class="s3">;</span><span class="s1"> 
+<a name="l30"><span class="ln">30   </span></a>        } 
+<a name="l31"><span class="ln">31   </span></a>    } 
+<a name="l32"><span class="ln">32   </span></a> 
+<a name="l33"><span class="ln">33   </span></a>    </span><span class="s4">//Get the content for each Album with a Bundle</span><span class="s1"> 
+<a name="l34"><span class="ln">34   </span></a>    ImageView albumIcon </span><span class="s2">= </span><span class="s1">(ImageView) findViewById(R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">icon_album_image_view)</span><span class="s3">;</span><span class="s1"> 
+<a name="l35"><span class="ln">35   </span></a>    TextView albumName </span><span class="s2">= </span><span class="s1">(TextView)findViewById(R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">album_name_text_view)</span><span class="s3">;</span><span class="s1"> 
+<a name="l36"><span class="ln">36   </span></a>    Bundle extras2 </span><span class="s2">= </span><span class="s0">this</span><span class="s2">.</span><span class="s1">getIntent()</span><span class="s2">.</span><span class="s1">getExtras()</span><span class="s3">;</span><span class="s1"> 
+<a name="l37"><span class="ln">37   </span></a>        </span><span class="s0">if </span><span class="s1">(extras2 </span><span class="s2">!= </span><span class="s0">null</span><span class="s1">) { 
+<a name="l38"><span class="ln">38   </span></a>        </span><span class="s4">// Al extra le pedimos el string con el nombre del album y la imagen con el icono.</span><span class="s1"> 
+<a name="l39"><span class="ln">39   </span></a>        </span><span class="s0">int </span><span class="s1">getAlbumIcon </span><span class="s2">= </span><span class="s1">extras2</span><span class="s2">.</span><span class="s1">getInt(</span><span class="s5">&quot;Album Icon&quot;</span><span class="s1">)</span><span class="s3">;</span><span class="s1"> 
+<a name="l40"><span class="ln">40   </span></a>        String getAlbumName </span><span class="s2">= </span><span class="s1">extras2</span><span class="s2">.</span><span class="s1">getString(</span><span class="s5">&quot;Album Name&quot;</span><span class="s1">)</span><span class="s3">;</span><span class="s1"> 
+<a name="l41"><span class="ln">41   </span></a>        albumIcon</span><span class="s2">.</span><span class="s1">setImageResource(getAlbumIcon)</span><span class="s3">;</span><span class="s1"> 
+<a name="l42"><span class="ln">42   </span></a>        albumName</span><span class="s2">.</span><span class="s1">setText(getAlbumName)</span><span class="s3">;</span><span class="s1"> 
+<a name="l43"><span class="ln">43   </span></a>    } 
+<a name="l44"><span class="ln">44   </span></a>} 
+<a name="l45"><span class="ln">45   </span></a></span></pre>
+</body>
+</html>

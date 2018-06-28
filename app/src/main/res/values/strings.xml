@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Home</string>
+
+    <!-- Category Album [CHAR LIMIT=20] -->
+    <string name="category_album">Album</string>
+
+    <!-- Category Song [CHAR LIMIT=20] -->
+    <string name="category_song">Song</string>
+
+    <!-- Main Activity -->
+    <string name="tittle_text">Your Library</string>
+
+    <!-- Song Activity-->
+    <string name="album_name_hint">Album Name</string>
+    <string name="song_name_hint">Song Name</string>
+    <string name="artist_name_hint">Artist Name</string>
+
+    <!-- Album List Item -->
+    <string name="album_icon_description">Album Icon</string>
+
+    <!-- Song List Item -->
+    <string name="song_name_text">song name</string>
+    <string name="artist_name_text">artist name</string>
+
+</resources>

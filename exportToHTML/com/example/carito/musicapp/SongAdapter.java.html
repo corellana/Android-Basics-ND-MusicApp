@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>SongAdapter.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #666879; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(255,121,198); font-weight: bold; }
+.s1 { color: rgb(248,248,242); }
+.s2 { color: rgb(255,121,198); }
+.s3 { color: rgb(248,248,242); }
+.s4 { color: rgb(98,114,164); font-style: italic; }
+.s5 { color: rgb(255,121,198); font-weight: bold; font-style: italic; }
+.s6 { color: rgb(98,114,164); }
+.s7 { color: rgb(189,147,249); }
+.s8 { color: rgb(241,250,140); }
+</style>
+</head>
+<BODY BGCOLOR="#282a36">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+SongAdapter.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">carito</span><span class="s2">.</span><span class="s1">musicapp</span><span class="s3">;</span><span class="s1"> 
+<a name="l2"><span class="ln">2    </span></a> 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">Activity</span><span class="s3">;</span><span class="s1"> 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s3">;</span><span class="s1"> 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">LayoutInflater</span><span class="s3">;</span><span class="s1"> 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s3">;</span><span class="s1"> 
+<a name="l7"><span class="ln">7    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">ViewGroup</span><span class="s3">;</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">ArrayAdapter</span><span class="s3">;</span><span class="s1"> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">ListView</span><span class="s3">;</span><span class="s1"> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s3">;</span><span class="s1"> 
+<a name="l11"><span class="ln">11   </span></a> 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">ArrayList</span><span class="s3">;</span><span class="s1"> 
+<a name="l13"><span class="ln">13   </span></a></span><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s3">;</span><span class="s1"> 
+<a name="l14"><span class="ln">14   </span></a> 
+<a name="l15"><span class="ln">15   </span></a></span><span class="s0">public class </span><span class="s1">SongAdapter </span><span class="s0">extends </span><span class="s1">ArrayAdapter</span><span class="s2">&lt;</span><span class="s1">Song</span><span class="s2">&gt; </span><span class="s1">{ 
+<a name="l16"><span class="ln">16   </span></a> 
+<a name="l17"><span class="ln">17   </span></a>    </span><span class="s4">/** 
+<a name="l18"><span class="ln">18   </span></a>     * CONSTRUCTOR 
+<a name="l19"><span class="ln">19   </span></a>     * This is our own custom constructor (it doesn't mirror a superclass constructor). 
+<a name="l20"><span class="ln">20   </span></a>     * The context is used to inflate the layout file, and the list is the data we want 
+<a name="l21"><span class="ln">21   </span></a>     * to populate into the lists. 
+<a name="l22"><span class="ln">22   </span></a>     * 
+<a name="l23"><span class="ln">23   </span></a>     * </span><span class="s5">@param </span><span class="s4">context The current context. Used to inflate the layout file. 
+<a name="l24"><span class="ln">24   </span></a>     * </span><span class="s5">@param </span><span class="s4">songs   A List of songs objects to display in a list. 
+<a name="l25"><span class="ln">25   </span></a>     *                El constructor inicializa el objeto (SongAdapter) por ti. 
+<a name="l26"><span class="ln">26   </span></a>     */</span><span class="s1"> 
+<a name="l27"><span class="ln">27   </span></a>    </span><span class="s0">public </span><span class="s1">SongAdapter(Activity context</span><span class="s2">, </span><span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">Song</span><span class="s2">&gt; </span><span class="s1">songs) { 
+<a name="l28"><span class="ln">28   </span></a>        </span><span class="s6">// Here, we initialize the ArrayAdapter's internal storage for the context and the list.</span><span class="s1"> 
+<a name="l29"><span class="ln">29   </span></a>        </span><span class="s6">// the second argument is used when the ArrayAdapter is populating a single TextView.</span><span class="s1"> 
+<a name="l30"><span class="ln">30   </span></a>        </span><span class="s6">// Because this is a custom adapter for two TextViews and an ImageView, the adapter is not</span><span class="s1"> 
+<a name="l31"><span class="ln">31   </span></a>        </span><span class="s6">// going to use this second argument, so it can be any value. Here, we used 0.</span><span class="s1"> 
+<a name="l32"><span class="ln">32   </span></a>        </span><span class="s0">super</span><span class="s1">(context</span><span class="s2">, </span><span class="s7">0</span><span class="s2">, </span><span class="s1">songs)</span><span class="s3">;</span><span class="s1"> 
+<a name="l33"><span class="ln">33   </span></a>    } 
+<a name="l34"><span class="ln">34   </span></a> 
+<a name="l35"><span class="ln">35   </span></a>    </span><span class="s4">/** 
+<a name="l36"><span class="ln">36   </span></a>     * * METHOD - GETVIEW 
+<a name="l37"><span class="ln">37   </span></a>     * Provides a view for an AdapterView (ListView, GridView, etc.) 
+<a name="l38"><span class="ln">38   </span></a>     * 
+<a name="l39"><span class="ln">39   </span></a>     * </span><span class="s5">@param </span><span class="s4">position    The position in the list of data that should be displayed in the 
+<a name="l40"><span class="ln">40   </span></a>     *                    list item view. 
+<a name="l41"><span class="ln">41   </span></a>     * </span><span class="s5">@param </span><span class="s4">convertView The recycled view to populate. 
+<a name="l42"><span class="ln">42   </span></a>     * </span><span class="s5">@param </span><span class="s4">parent      The parent ViewGroup that is used for inflation. 
+<a name="l43"><span class="ln">43   </span></a>     * </span><span class="s5">@return </span><span class="s4">The View for the position in the AdapterView. 
+<a name="l44"><span class="ln">44   </span></a>     */</span><span class="s1"> 
+<a name="l45"><span class="ln">45   </span></a>    @Override 
+<a name="l46"><span class="ln">46   </span></a>    </span><span class="s0">public </span><span class="s1">View getView(</span><span class="s0">final int </span><span class="s1">position</span><span class="s2">, </span><span class="s1">View convertView</span><span class="s2">, </span><span class="s1">ViewGroup parent) { 
+<a name="l47"><span class="ln">47   </span></a>        </span><span class="s6">// List view llama al adapter pidiendole cada una de las vistas que</span><span class="s1"> 
+<a name="l48"><span class="ln">48   </span></a>        </span><span class="s6">// le corresponden a cada item del arreglo de canciones.</span><span class="s1"> 
+<a name="l49"><span class="ln">49   </span></a> 
+<a name="l50"><span class="ln">50   </span></a>        </span><span class="s6">// Check if the existing view is being reused, otherwise inflate the view.</span><span class="s1"> 
+<a name="l51"><span class="ln">51   </span></a>        </span><span class="s6">// Convierte el layout en una vista.</span><span class="s1"> 
+<a name="l52"><span class="ln">52   </span></a>        View songListItemView </span><span class="s2">= </span><span class="s1">convertView</span><span class="s3">;</span><span class="s1"> 
+<a name="l53"><span class="ln">53   </span></a>        </span><span class="s0">if </span><span class="s1">(songListItemView </span><span class="s2">== </span><span class="s0">null</span><span class="s1">) { 
+<a name="l54"><span class="ln">54   </span></a>            songListItemView </span><span class="s2">= </span><span class="s1">LayoutInflater</span><span class="s2">.</span><span class="s1">from(getContext())</span><span class="s2">.</span><span class="s1">inflate( 
+<a name="l55"><span class="ln">55   </span></a>                    R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">songs_list_item</span><span class="s2">, </span><span class="s1">parent</span><span class="s2">, </span><span class="s0">false</span><span class="s1">)</span><span class="s3">;</span><span class="s1"> 
+<a name="l56"><span class="ln">56   </span></a>        } 
+<a name="l57"><span class="ln">57   </span></a> 
+<a name="l58"><span class="ln">58   </span></a>        </span><span class="s6">// Get the {@link Song} object located at this position in the list.</span><span class="s1"> 
+<a name="l59"><span class="ln">59   </span></a>        </span><span class="s0">final </span><span class="s1">Song currentSong </span><span class="s2">= </span><span class="s1">getItem(position)</span><span class="s3">;</span><span class="s1"> 
+<a name="l60"><span class="ln">60   </span></a> 
+<a name="l61"><span class="ln">61   </span></a>        </span><span class="s6">// Find the TextView in the song_list_item.xml layout with the ID song_name_text_view</span><span class="s1"> 
+<a name="l62"><span class="ln">62   </span></a>        TextView songNameTextView </span><span class="s2">= </span><span class="s1">(TextView) songListItemView</span><span class="s2">.</span><span class="s1">findViewById(R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">song_name_text_view)</span><span class="s3">;</span><span class="s1"> 
+<a name="l63"><span class="ln">63   </span></a>        </span><span class="s6">// Get the Song Name from the current Song object and</span><span class="s1"> 
+<a name="l64"><span class="ln">64   </span></a>        </span><span class="s6">// set this text on the Song Name TextView</span><span class="s1"> 
+<a name="l65"><span class="ln">65   </span></a>        songNameTextView</span><span class="s2">.</span><span class="s1">setText(currentSong</span><span class="s2">.</span><span class="s1">getSongName())</span><span class="s3">;</span><span class="s1"> 
+<a name="l66"><span class="ln">66   </span></a> 
+<a name="l67"><span class="ln">67   </span></a>        </span><span class="s6">// Find the TextView in the song_list_item.xml layout with the ID artist_name_text_view</span><span class="s1"> 
+<a name="l68"><span class="ln">68   </span></a>        TextView artistNameTextView </span><span class="s2">= </span><span class="s1">(TextView) songListItemView</span><span class="s2">.</span><span class="s1">findViewById(R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">artist_name_text_view)</span><span class="s3">;</span><span class="s1"> 
+<a name="l69"><span class="ln">69   </span></a>        </span><span class="s6">// Get the Artist Name from the current Song object and</span><span class="s1"> 
+<a name="l70"><span class="ln">70   </span></a>        </span><span class="s6">// set this text on the Artist Name TextView</span><span class="s1"> 
+<a name="l71"><span class="ln">71   </span></a>        artistNameTextView</span><span class="s2">.</span><span class="s1">setText(currentSong</span><span class="s2">.</span><span class="s1">getArtistName())</span><span class="s3">;</span><span class="s1"> 
+<a name="l72"><span class="ln">72   </span></a> 
+<a name="l73"><span class="ln">73   </span></a>        </span><span class="s6">/// Hasta aquí, el ListView mostrará todas las canciones porque le pidió ayuda al Adapter que</span><span class="s1"> 
+<a name="l74"><span class="ln">74   </span></a>        </span><span class="s6">//  se sabe todas las canciones. Y el listview usará GetView para poder mostrar la lista completa.</span><span class="s1"> 
+<a name="l75"><span class="ln">75   </span></a> 
+<a name="l76"><span class="ln">76   </span></a> 
+<a name="l77"><span class="ln">77   </span></a>        </span><span class="s6">// Ya configuramos el contenido, ahora configuraremos las acciones.</span><span class="s1"> 
+<a name="l78"><span class="ln">78   </span></a>        songListItemView</span><span class="s2">.</span><span class="s1">setOnClickListener(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener() { 
+<a name="l79"><span class="ln">79   </span></a>            @Override 
+<a name="l80"><span class="ln">80   </span></a>            </span><span class="s0">public void </span><span class="s1">onClick(View v) { 
+<a name="l81"><span class="ln">81   </span></a>                Intent songIntent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent(getContext()</span><span class="s2">, </span><span class="s1">SongActivity</span><span class="s2">.</span><span class="s0">class</span><span class="s1">)</span><span class="s3">;</span><span class="s1"> 
+<a name="l82"><span class="ln">82   </span></a>                </span><span class="s6">// A current Song le pedimos el Song Name y se lo pasamos al intent como un extra.</span><span class="s1"> 
+<a name="l83"><span class="ln">83   </span></a>                songIntent</span><span class="s2">.</span><span class="s1">putExtra(</span><span class="s8">&quot;Song Name&quot;</span><span class="s2">, </span><span class="s1">currentSong</span><span class="s2">.</span><span class="s1">getSongName())</span><span class="s3">;</span><span class="s1"> 
+<a name="l84"><span class="ln">84   </span></a>                songIntent</span><span class="s2">.</span><span class="s1">putExtra(</span><span class="s8">&quot;Artist Name&quot;</span><span class="s2">, </span><span class="s1">currentSong</span><span class="s2">.</span><span class="s1">getArtistName())</span><span class="s3">;</span><span class="s1"> 
+<a name="l85"><span class="ln">85   </span></a>                getContext()</span><span class="s2">.</span><span class="s1">startActivity(songIntent)</span><span class="s3">;</span><span class="s1"> 
+<a name="l86"><span class="ln">86   </span></a>            } 
+<a name="l87"><span class="ln">87   </span></a>        })</span><span class="s3">;</span><span class="s1"> 
+<a name="l88"><span class="ln">88   </span></a> 
+<a name="l89"><span class="ln">89   </span></a>        </span><span class="s6">// Return the whole list item layout (containing 2 TextViews)</span><span class="s1"> 
+<a name="l90"><span class="ln">90   </span></a>        </span><span class="s6">// so that it can be shown in the ListView</span><span class="s1"> 
+<a name="l91"><span class="ln">91   </span></a>        </span><span class="s6">// Retornamos la vista configurada (tiene su layout, su contenido y acciones).</span><span class="s1"> 
+<a name="l92"><span class="ln">92   </span></a>        </span><span class="s0">return </span><span class="s1">songListItemView</span><span class="s3">;</span><span class="s1"> 
+<a name="l93"><span class="ln">93   </span></a>    } 
+<a name="l94"><span class="ln">94   </span></a> 
+<a name="l95"><span class="ln">95   </span></a>} 
+<a name="l96"><span class="ln">96   </span></a></span></pre>
+</body>
+</html>

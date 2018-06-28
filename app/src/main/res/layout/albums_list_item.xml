@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/icon_album_image_view"
+        android:contentDescription="@string/album_icon_description"
+        android:layout_width="@dimen/icon_small_width"
+        android:layout_height="@dimen/icon_small_height"
+        android:paddingEnd="@dimen/icon_small_padding_end"
+        android:paddingRight="@dimen/icon_small_padding_end"
+        android:paddingStart="@dimen/icon_small_padding_start"
+        android:paddingLeft="@dimen/icon_small_padding_start"
+         />
+
+    <TextView
+        android:id="@+id/album_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/album_name_album_list_item_padding_Start"
+        android:paddingRight="@dimen/album_name_album_list_item_padding_end"
+        android:paddingStart="@dimen/album_name_album_list_item_padding_Start"
+        android:paddingEnd="@dimen/album_name_album_list_item_padding_end"
+        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+        tools:text="album icon"/>
+
+</LinearLayout>
