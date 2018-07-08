@@ -10,12 +10,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:paddingTop="@dimen/tittle_text_size_padding_top"
         android:text="@string/tittle_text"
         android:textSize="@dimen/tittle_text_size"
-        android:paddingTop="@dimen/tittle_text_size_padding_top"/>
+        android:fontFamily="@font/robotolight"/>
 
-    <ListView
-        xmlns:tools="http://schemas.android.com/tools"
+    <ListView xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/album_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

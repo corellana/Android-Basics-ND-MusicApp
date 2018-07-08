@@ -2,13 +2,10 @@
 
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-
-
 
     <TextView
         android:id="@+id/album_name_text_view"
@@ -21,16 +18,18 @@
         app:layout_constraintBottom_toTopOf="@+id/icon_album_image_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/robotolight"/>
 
     <ImageView
         android:id="@+id/icon_album_image_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginStart="30dp"
+        android:layout_width="@dimen/album_icon_song_activity_width"
+        android:layout_height="@dimen/album_icon_song_activity_height"
+        android:layout_marginEnd="@dimen/album_icon_song_activity_marginEnd"
+        android:layout_marginLeft="@dimen/album_icon_song_activity_marginLeft"
+        android:layout_marginRight="@dimen/album_icon_song_activity_marginRight"
+        android:layout_marginStart="@dimen/album_icon_song_activity_marginStart"
+        android:contentDescription="@string/album_icon_description"
         app:layout_constraintBottom_toTopOf="@+id/song_name_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,51 +39,55 @@
         android:id="@+id/song_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="@dimen/song_name_song_activity_marginBottom"
         android:hint="@string/song_name_hint"
         android:paddingTop="@dimen/song_name_song_activity_padding_top"
         android:textSize="@dimen/song_name_song_activity_text_size"
         app:layout_constraintBottom_toTopOf="@+id/artist_name_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon_album_image_view" />
+        app:layout_constraintTop_toBottomOf="@+id/icon_album_image_view"
+        android:fontFamily="@font/robotolight"/>
 
     <TextView
         android:id="@+id/artist_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
+        android:layout_marginLeft="@dimen/artist_name_song_activity_marginLeft"
+        android:layout_marginStart="@dimen/artist_name_song_activity_marginStart"
         android:hint="@string/artist_name_hint"
-        android:textSize="@dimen/artist_name_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:textSize="@dimen/artist_name_song_activity_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/timeline"
         app:layout_constraintStart_toStartOf="@+id/song_name_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/song_name_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/song_name_text_view"
+        android:fontFamily="@font/robotolight"/>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/timeline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginStart="40dp"
-        android:paddingTop="42dp"
+        android:layout_marginEnd="@dimen/timeline_marginEnd"
+        android:layout_marginLeft="@dimen/timeline_marginLeft"
+        android:layout_marginRight="@dimen/timeline_marginRight"
+        android:layout_marginStart="@dimen/timeline_marginStart"
+        android:contentDescription="@+id/timeline_description"
+        android:paddingTop="@dimen/timeline_paddingTop"
         android:src="@drawable/timeline"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/controls"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/artist_name_text_view" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/controls"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:paddingTop="32dp"
+        android:layout_height="@dimen/controls_height"
+        android:contentDescription="@string/controls_description"
+        android:paddingTop="@dimen/controls_paddingTop"
         android:src="@drawable/controls"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/timeline" />
 
 </android.support.constraint.ConstraintLayout>

@@ -5,14 +5,14 @@
     android:fillViewport="true"
     android:orientation="vertical">
 
-
     <ImageView
         android:id="@+id/icon_album_image_view"
         android:layout_width="@dimen/icon_normal_width"
         android:layout_height="@dimen/icon_normal_height"
         android:layout_gravity="center"
+        android:contentDescription="@string/album_icon_description"
         android:paddingTop="@dimen/icon_normal_padding_top"
-        android:src="@drawable/game_of_thrones"/>
+        android:src="@drawable/game_of_thrones" />
 
     <TextView
         android:id="@+id/album_name_text_view"
@@ -21,7 +21,8 @@
         android:layout_gravity="center"
         android:hint="@string/album_name_hint"
         android:paddingTop="@dimen/album_name_padding_top"
-        android:textSize="@dimen/album_name_text_size" />
+        android:textSize="@dimen/album_name_text_size"
+        android:fontFamily="@font/robotolight"/>
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
