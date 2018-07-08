@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Home</string>
+    <string name="app_name">Music App</string>
 
     <!-- Category Album [CHAR LIMIT=20] -->
     <string name="category_album">Album</string>
@@ -9,6 +9,9 @@
 
     <!-- Main Activity -->
     <string name="tittle_text">Your Library</string>
+
+    <!-- Album  Activity -->
+    <string name="back_image_description">Back</string>
 
     <!-- Song Activity-->
     <string name="album_name_hint">Album Name</string>

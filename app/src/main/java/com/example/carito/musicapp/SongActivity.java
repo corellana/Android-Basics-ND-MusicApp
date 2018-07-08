@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class SongActivity extends AppCompatActivity {
 
     @Override
@@ -22,15 +20,46 @@ public class SongActivity extends AppCompatActivity {
 
         Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
-            String getAlbumName = extras.getString("Album Name");
-            int getAlbumIcon = extras.getInt("Album Icon");
-            String getSongName = extras.getString("Song Name");
-            String getArtistName = extras.getString("Artist Name");
+            final String getAlbumName = extras.getString(Constants.ALBUM_NAME);
+            final int getAlbumIcon = extras.getInt(Constants.ALBUM_ICON);
+            String getSongName = extras.getString(Constants.SONG_NAME);
+            String getArtistName = extras.getString(Constants.ARTIST_NAME);
             albumIcon.setImageResource(getAlbumIcon);
             albumName.setText(getAlbumName);
             songName.setText(getSongName);
             artistName.setText(getArtistName);
+
+            /**
+             * This method is called when Image Back Previous Activity is clicked.
+             * @param view Image View Back Previous Activity
+             */
+
+            ImageView backButton = (ImageView) findViewById(R.id.back_button);
+
+            backButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent songIntent = new Intent(getBaseContext(), AlbumActivity.class);
+                    songIntent.putExtra(Constants.ALBUM_ICON, getAlbumIcon);
+                    songIntent.putExtra(Constants.ALBUM_NAME, getAlbumName);
+                    startActivity(songIntent);
+                }
+            });
         }
+
+//    // Intent for the activity to open when user selects the notification
+//    Intent detailsIntent = new Intent(this, AlbumActivity.class);
+//
+//    // Use TaskStackBuilder to build the back stack and get the PendingIntent
+//    PendingIntent pendingIntent = TaskStackBuilder.create(this)
+//                    // add all of DetailsActivity's parents to the stack,
+//                    // followed by DetailsActivity itself
+//                    .addNextIntentWithParentStack(detailsIntent)
+//                    .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+//
+//    NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+//    builder.setContentIntent(pendingIntent);
     }
 }
+
 

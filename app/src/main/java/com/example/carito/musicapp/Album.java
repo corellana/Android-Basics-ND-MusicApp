@@ -7,12 +7,8 @@ public class Album {
     private String mAlbumName;
     /** Album Icon*/
     private int mAlbumIcon;
-    /** Album Songs List*/
 
     // CONSTRUCTOR
-    // Configura/initialize el objeto Album (para la instancia especifica).
-    // The name has to match the class name and it has no return type.
-
     public Album(String albumName, int albumIcon) {
         mAlbumName = albumName;
         mAlbumIcon = albumIcon;

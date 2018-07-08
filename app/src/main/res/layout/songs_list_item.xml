@@ -11,7 +11,9 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/song_name_song_list_item_padding_top"
         android:paddingStart="@dimen/song_name_song_list_item_padding_start"
+        android:paddingLeft="@dimen/song_name_song_list_item_padding_start"
         android:paddingEnd="@dimen/song_name_song_list_item_padding_end"
+        android:paddingRight="@dimen/song_name_song_list_item_padding_end"
         tools:text="@string/song_name_text"
         android:textSize="@dimen/song_name_song_list_item_text_size"/>
 
@@ -19,8 +21,10 @@
         android:id="@+id/artist_name_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/artist_name_song_list_item_padding_start"
         android:paddingStart="@dimen/artist_name_song_list_item_padding_start"
         android:paddingEnd="@dimen/artist_name_song_list_item_padding_end"
+        android:paddingRight="@dimen/artist_name_song_list_item_padding_end"
         android:paddingBottom="@dimen/artist_name_song_list_item_padding_bottom"
         tools:text="@string/artist_name_text"
         android:textSize="@dimen/artist_name_song_list_item_text_size"/>

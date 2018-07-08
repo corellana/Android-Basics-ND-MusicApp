@@ -1,13 +1,14 @@
 package com.example.carito.musicapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AlbumActivity extends AppCompatActivity {
 
@@ -15,19 +16,18 @@ public class AlbumActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album);
+
         //Get the content for each Album with a Bundle (Icon and Name Album)
         ImageView albumIcon = (ImageView) findViewById(R.id.icon_album_image_view);
         TextView albumName = (TextView) findViewById(R.id.album_name_text_view);
-        // El song Adapter hace unos extras, se lo pasa al intent y el intent los encapsula
-        // en un paquete (extras)
+
         //Create arrayList
         ArrayList<Song> songs = new ArrayList<Song>();
 
         Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
-            // Al extra le pedimos el string con el nombre del album y la imagen con el icono.
-            int getAlbumIcon = extras.getInt("Album Icon");
-            String getAlbumName = extras.getString("Album Name");
+            int getAlbumIcon = extras.getInt(Constants.ALBUM_ICON);
+            String getAlbumName = extras.getString(Constants.ALBUM_NAME);
             albumIcon.setImageResource(getAlbumIcon);
             albumName.setText(getAlbumName);
 
@@ -49,7 +49,7 @@ public class AlbumActivity extends AppCompatActivity {
             if (getAlbumName.equals("Both Sides")) {
                 songs.add(new Song("Both Sides of the Story", "Phil Collins", getAlbumName, getAlbumIcon));
                 songs.add(new Song("Can't Turn Back The Years", "Phil Collins", getAlbumName, getAlbumIcon));
-                songs.add(new Song("Eveyday", "Phil Collins", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Everyday", "Phil Collins", getAlbumName, getAlbumIcon));
                 songs.add(new Song("I've Forgotten Everything", "Phil Collins", getAlbumName, getAlbumIcon));
                 songs.add(new Song("We're Sons Of Our Fathers", "Phil Collins", getAlbumName, getAlbumIcon));
                 songs.add(new Song("Can't find My Way", "Phil Collins", getAlbumName, getAlbumIcon));
@@ -79,6 +79,17 @@ public class AlbumActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
         //  Luego, el list view llamará a getView en el SongAdapter, una vez por cada canción.
 
+    }
+
+    /**
+     * This method is called when Image Back Previous Activity is clicked.
+     *
+     * @param view Image View Back Previous Activity
+     */
+
+    public void backActivity(View view) {
+        Intent backToPreviousActivity = new Intent(this, MainActivity.class);
+        startActivity(backToPreviousActivity);
     }
 }
 

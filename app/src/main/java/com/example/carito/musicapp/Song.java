@@ -15,7 +15,7 @@ public class Song {
     /** Album Icon*/
     private int mAlbumIcon;
 
-    // CONSTRUCTOR - Configura/initialize el objeto Song (para la instancia especifica).
+    // CONSTRUCTOR - initialize the object Song (for the specific instance).
     // The name has to match the class name and it has no return type.
 
     public Song(String songName, String artistName, String albumName, int albumIcon) {

@@ -17,16 +17,20 @@
             </intent-filter>
         </activity>
 
+        <!-- A child of the main activity -->
         <activity
             android:name=".AlbumActivity"
-            android:label="@string/category_album"/>
+            android:label="@string/category_album"
+            android:parentActivityName=".MainActivity"/>
+        <!-- The meta-data element is needed for versions lower than 4.1 -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.carito.musicapp.MainActivity" />
 
         <activity
             android:name=".SongActivity"
-            android:label="@string/category_song"/>
+            android:label="@string/category_song" />
 
     </application>
-
-
 
 </manifest>

@@ -5,32 +5,48 @@
     android:fillViewport="true"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="@dimen/back_button_width"
+            android:layout_height="@dimen/back_button_height"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/back_image_description"
+            android:onClick="backActivity"
+            android:src="@drawable/back_button"/>
+
+    </RelativeLayout>
+
     <ImageView
         android:id="@+id/icon_album_image_view"
         android:layout_width="@dimen/icon_normal_width"
         android:layout_height="@dimen/icon_normal_height"
-        android:src="@drawable/game_of_thrones"
         android:layout_gravity="center"
-        android:paddingTop="@dimen/icon_normal_padding_top"/>
+        android:paddingTop="@dimen/icon_normal_padding_top"
+        android:src="@drawable/game_of_thrones"/>
 
     <TextView
         android:id="@+id/album_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Album Name"
-        android:textSize="@dimen/album_name_text_size"
-        android:paddingTop="@dimen/album_name_padding_top"/>
+        android:hint="@string/album_name_hint"
+        android:paddingTop="@dimen/album_name_padding_top"
+        android:textSize="@dimen/album_name_text_size" />
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/songs_list"
-        android:orientation="vertical"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
         android:paddingLeft="@dimen/list_view_padding_left"
-        tools:context="com.example.android.music.AlbumActivity"/>
+        tools:context="com.example.android.music.AlbumActivity" />
 
 </LinearLayout>
 

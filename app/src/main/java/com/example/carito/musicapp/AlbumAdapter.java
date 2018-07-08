@@ -68,8 +68,8 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
                     Intent albumIntent = new Intent(getContext(), AlbumActivity.class);
                     // A current Album le pedimos el Album Name y el Album Icon
                     // y se lo pasamos al intent como un extra.
-                    albumIntent.putExtra("Album Name", currentAlbum.getAlbumName());
-                    albumIntent.putExtra("Album Icon", currentAlbum.getAlbumIcon());
+                    albumIntent.putExtra(Constants.ALBUM_NAME, currentAlbum.getAlbumName());
+                    albumIntent.putExtra(Constants.ALBUM_ICON, currentAlbum.getAlbumIcon());
                     getContext().startActivity(albumIntent);
                 }
             });
