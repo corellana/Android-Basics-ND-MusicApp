@@ -1,9 +1,7 @@
 package com.example.carito.musicapp;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -79,17 +77,6 @@ public class AlbumActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
         //  Luego, el list view llamará a getView en el SongAdapter, una vez por cada canción.
 
-    }
-
-    /**
-     * This method is called when Image Back Previous Activity is clicked.
-     *
-     * @param view Image View Back Previous Activity
-     */
-
-    public void backActivity(View view) {
-        Intent backToPreviousActivity = new Intent(this, MainActivity.class);
-        startActivity(backToPreviousActivity);
     }
 }
 

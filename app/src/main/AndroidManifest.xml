@@ -21,15 +21,23 @@
         <activity
             android:name=".AlbumActivity"
             android:label="@string/category_album"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop">
+
         <!-- The meta-data element is needed for versions lower than 4.1 -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.carito.musicapp.MainActivity" />
+        </activity>
 
         <activity
             android:name=".SongActivity"
-            android:label="@string/category_song" />
+            android:label="@string/category_song"
+            android:parentActivityName=".AlbumActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.carito.musicapp.AlbumActivity" />
+        </activity>
 
     </application>
 

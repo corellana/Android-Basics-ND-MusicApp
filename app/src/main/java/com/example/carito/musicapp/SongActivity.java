@@ -1,9 +1,7 @@
 package com.example.carito.musicapp;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,37 +26,7 @@ public class SongActivity extends AppCompatActivity {
             albumName.setText(getAlbumName);
             songName.setText(getSongName);
             artistName.setText(getArtistName);
-
-            /**
-             * This method is called when Image Back Previous Activity is clicked.
-             * @param view Image View Back Previous Activity
-             */
-
-            ImageView backButton = (ImageView) findViewById(R.id.back_button);
-
-            backButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent songIntent = new Intent(getBaseContext(), AlbumActivity.class);
-                    songIntent.putExtra(Constants.ALBUM_ICON, getAlbumIcon);
-                    songIntent.putExtra(Constants.ALBUM_NAME, getAlbumName);
-                    startActivity(songIntent);
-                }
-            });
         }
-
-//    // Intent for the activity to open when user selects the notification
-//    Intent detailsIntent = new Intent(this, AlbumActivity.class);
-//
-//    // Use TaskStackBuilder to build the back stack and get the PendingIntent
-//    PendingIntent pendingIntent = TaskStackBuilder.create(this)
-//                    // add all of DetailsActivity's parents to the stack,
-//                    // followed by DetailsActivity itself
-//                    .addNextIntentWithParentStack(detailsIntent)
-//                    .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-//
-//    NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-//    builder.setContentIntent(pendingIntent);
     }
 }
 
