@@ -11,6 +11,7 @@
         android:id="@+id/album_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/robotolight"
         android:hint="@string/album_name_hint"
         android:paddingBottom="@dimen/album_name_song_activity_padding_bottom"
         android:paddingTop="@dimen/album_name_song_activity_padding_top"
@@ -18,8 +19,7 @@
         app:layout_constraintBottom_toTopOf="@+id/icon_album_image_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fontFamily="@font/robotolight"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/icon_album_image_view"
@@ -40,14 +40,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/song_name_song_activity_marginBottom"
+        android:fontFamily="@font/robotolight"
         android:hint="@string/song_name_hint"
         android:paddingTop="@dimen/song_name_song_activity_padding_top"
         android:textSize="@dimen/song_name_song_activity_text_size"
         app:layout_constraintBottom_toTopOf="@+id/artist_name_text_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon_album_image_view"
-        android:fontFamily="@font/robotolight"/>
+        app:layout_constraintTop_toBottomOf="@+id/icon_album_image_view" />
 
     <TextView
         android:id="@+id/artist_name_text_view"
@@ -55,12 +56,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/artist_name_song_activity_marginLeft"
         android:layout_marginStart="@dimen/artist_name_song_activity_marginStart"
+        android:fontFamily="@font/robotolight"
         android:hint="@string/artist_name_hint"
         android:textSize="@dimen/artist_name_song_activity_text_size"
         app:layout_constraintBottom_toTopOf="@+id/timeline"
-        app:layout_constraintStart_toStartOf="@+id/song_name_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/song_name_text_view"
-        android:fontFamily="@font/robotolight"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_name_text_view" />
 
     <ImageView
         android:id="@+id/timeline"

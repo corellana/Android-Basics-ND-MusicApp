@@ -44,8 +44,8 @@
     <dimen name="controls_paddingTop">32dp</dimen>
 
     <!-- Album List Item -->
-    <dimen name="icon_small_height">200dp</dimen>
-    <dimen name="icon_small_width">200dp</dimen>
+    <dimen name="icon_small_height">220dp</dimen>
+    <dimen name="icon_small_width">220dp</dimen>
     <dimen name="icon_small_padding_end">16dp</dimen>
     <dimen name="icon_small_padding_start">16dp</dimen>
     <dimen name="album_name_album_list_item_padding_end">16dp</dimen>

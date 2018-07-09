@@ -64,6 +64,34 @@ public class AlbumActivity extends AppCompatActivity {
                 songs.add(new Song("Fausta", "Rupert Gregson-Williams", getAlbumName, getAlbumIcon));
                 songs.add(new Song("The God of War", "Rupert Gregson-Williams", getAlbumName, getAlbumIcon));
             }
+
+            if (getAlbumName.equals("Wake and Drake")) {
+                songs.add(new Song("Can't take a Joke", "Drake", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Don't matter to Me", "Drake", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Elevate", "Drake", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Emotionless", "Drake", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Mob ties", "Drake", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Nice for What", "Drake", getAlbumName, getAlbumIcon));
+            }
+
+            if (getAlbumName.equals("Divide")) {
+                songs.add(new Song("Eraser", "Ed Sheeran", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Castle on the Hill", "Ed Sheeran", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Dive", "Ed Sheeran", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Shape of You", "Ed Sheeran", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Perfect", "Ed Sheeran", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Happier", "Ed Sheeran", getAlbumName, getAlbumIcon));
+            }
+
+            if (getAlbumName.equals("I am")) {
+                songs.add(new Song("If I Were a Boy", "Beyonce", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Halo", "Beyonce", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Disappear", "Beyonce", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Ave Maria", "Beyonce", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Satellites", "Beyonce", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Radio", "Beyonce", getAlbumName, getAlbumIcon));
+                songs.add(new Song("Sweet Dreams", "Beyonce", getAlbumName, getAlbumIcon));
+            }
         }
 
         // OnCreate crea un adapter para pasarle a la vista la lista de canciones.

@@ -3,7 +3,7 @@ package com.example.carito.musicapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ListView;
+import android.widget.GridView;
 
 import java.util.ArrayList;
 
@@ -20,13 +20,16 @@ public class MainActivity extends AppCompatActivity {
         albums.add(new Album("Soundtrack GOT 7", R.drawable.game_of_thrones));
         albums.add(new Album("Both Sides", R.drawable.both_sides));
         albums.add(new Album("Soundtrack Wonder Woman", R.drawable.wonder_woman));
+        albums.add(new Album("Wake and Drake", R.drawable.drake));
+        albums.add(new Album("Divide", R.drawable.edsheeran));
+        albums.add(new Album("I am", R.drawable.beyonce));
 
         // Create an {@link AlbumAdapter}, whose data source is a list of {@link albums}.
         // The adapter knows how to create list item views for each item in the list.
         AlbumAdapter adapter = new AlbumAdapter(this, albums);
 
         // Get a reference to the ListView (Después buscas la vista en tu layout)
-        ListView listView = (ListView) findViewById(R.id.album_list);
+        GridView listView = (GridView) findViewById(R.id.album_list);
 
         // And attach the adapter to the listview.
         listView.setAdapter(adapter);
